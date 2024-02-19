@@ -1,0 +1,64 @@
+{
+  "clients": [
+    {
+      "companyName": "Compagnie Alpha",
+      "firstName": "Jean",
+      "lastName": "Dupont",
+      "email": "jean.dupont@alpha.com",
+      "phone": "0123456789",
+      "address": "123 rue de Alpha",
+      "zipCode": "75001",
+      "city": "Paris",
+      "country": "France",
+      "state": true
+    },
+    {
+      "companyName": "Beta Entreprises",
+      "firstName": "Marie",
+      "lastName": "Durand",
+      "email": "marie.durand@beta.com",
+      "phone": "9876543210",
+      "address": "456 avenue de Beta",
+      "zipCode": "75002",
+      "city": "Lyon",
+      "country": "France",
+      "state": false
+    },
+    {
+      "companyName": "Gamma Solutions",
+      "firstName": "Luc",
+      "lastName": "Martin",
+      "email": "luc.martin@gamma.com",
+      "phone": "1234567890",
+      "address": "789 boulevard de Gamma",
+      "zipCode": "75003",
+      "city": "Marseille",
+      "country": "France",
+      "state": true
+    },
+    {
+      "companyName": "Delta Services",
+      "firstName": "Sophie",
+      "lastName": "Bernard",
+      "email": "sophie.bernard@delta.com",
+      "phone": "0987654321",
+      "address": "321 rue de Delta",
+      "zipCode": "75004",
+      "city": "Toulouse",
+      "country": "France",
+      "state": false
+    },
+    {
+      "companyName": "Epsilon LLC",
+      "firstName": "Alex",
+      "lastName": "Leroy",
+      "email": "alex.leroy@epsilon.com",
+      "phone": "1122334455",
+      "address": "654 avenue de Epsilon",
+      "zipCode": "75005",
+      "city": "Nice",
+      "country": "France",
+      "state": true
+    }
+  ]
+}

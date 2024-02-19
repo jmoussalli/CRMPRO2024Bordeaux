@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import {StateClient} from "./core/enums/state-client";
+import {Client} from "./core/models/clients";
 
 @Component({
   selector: 'app-root',
@@ -7,4 +9,5 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'CRMPRO2024Bordeaux';
+  state:StateClient = StateClient.ACTIVE;
 }

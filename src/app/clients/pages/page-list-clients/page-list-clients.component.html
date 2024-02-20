@@ -1,1 +1,5 @@
-<p>page-list-clients works!</p>
+<ul>
+  <li *ngFor="let client of clients">
+    {{ client.firstName }} - {{ client.lastName }} <!-- Adaptez selon la structure de vos données -->
+  </li>
+</ul>

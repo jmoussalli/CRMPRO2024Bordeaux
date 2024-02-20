@@ -8,6 +8,7 @@ import { SidebarComponent } from './core/sidebar/sidebar.component';
 import {PageListClientsComponent} from "./clients/pages/page-list-clients/page-list-clients.component";
 import {PageAddClientsComponent} from "./clients/pages/page-add-clients/page-add-clients.component";
 import {PageEditClientsComponent} from "./clients/pages/page-edit-clients/page-edit-clients.component";
+import {HttpClientModule} from "@angular/common/http";
 
 
 @NgModule({
@@ -21,7 +22,8 @@ import {PageEditClientsComponent} from "./clients/pages/page-edit-clients/page-e
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

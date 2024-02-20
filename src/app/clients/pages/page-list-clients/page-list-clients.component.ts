@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {ClientsService} from "../../services/clients.service";
+import {Observable} from "rxjs";
 
 @Component({
   selector: 'app-page-list-clients',
@@ -11,9 +12,31 @@ export class PageListClientsComponent implements OnInit {
   constructor(private clientsService: ClientsService) {
   }
   ngOnInit() {
-    console.log('page html initialisé');
-    this.tabPrenoms = this.clientsService.getAllprenoms();
-    console.log(this.tabPrenoms);
+    // console.log('page html initialisé');
+    this.clientsService.getAllprenoms().subscribe({
+      next: (prenoms: string[]) => {
+        console.log(prenoms)
+      }
+    })
+
+
+
+    const monObservable = new Observable(subcriber => {
+        subcriber.next('Bonjour Dame');
+        subcriber.next('Bonjour Virginie');
+        subcriber.next('Bonjour Sukjin');
+        subcriber.complete();
+        subcriber.next('Bonjour Lucia');
+      //   subcriber.error();
+      // subcriber.complete();
+    })
+
+    monObservable.subscribe({
+      next: value => {
+        console.log(value);
+      }
+    })
+
   }
 
 

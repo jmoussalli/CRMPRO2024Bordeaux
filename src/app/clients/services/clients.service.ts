@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from "@angular/common/http";
-import {Observable} from "rxjs";
+import {Observable, of} from "rxjs";
 import {Client} from "../../core/models/clients";
 
 @Injectable({
@@ -12,10 +12,7 @@ export class ClientsService {
   getAllCLients(): Observable<Client[]> {
     return this.http.get<Client[]>('http://localhost:3000/clients');
   }
-  getAllprenoms(): any{
-    return setTimeout(() => {
-    return ['veronica', 'gabriel', 'sixtine'];
-    },3000)
-
+  getAllprenoms(): Observable<string[]>{
+    return of(['veronica', 'gabriel', 'sixtine']);
   }
 }

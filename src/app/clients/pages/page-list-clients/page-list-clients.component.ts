@@ -1,43 +1,54 @@
 import {Component, OnInit} from '@angular/core';
 import {ClientsService} from "../../services/clients.service";
-import {Observable} from "rxjs";
+import {Observable, of} from "rxjs";
 
 @Component({
   selector: 'app-page-list-clients',
   templateUrl: './page-list-clients.component.html',
-  styleUrl: './page-list-clients.component.css'
+  styleUrls: ['./page-list-clients.component.css']
 })
 export class PageListClientsComponent implements OnInit {
-  tabPrenoms: string[]= [];
-  constructor(private clientsService: ClientsService) {
+  clients: any[] = [];
+  headers: string[] = [
+    'id',
+    'companyName',
+    'firstName',
+    'lastName',
+    'email',
+    'phone',
+    'address',
+    'zipCode',
+    'city',
+    'country',
+    'state',
+  ];
+  constructor(private clientService: ClientsService) {
   }
-  ngOnInit() {
-    // console.log('page html initialisé');
-    this.clientsService.getAllprenoms().subscribe({
-      next: (prenoms: string[]) => {
-        console.log(prenoms)
-      }
-    })
 
+  ngOnInit(): void {
+    this.clientService.getAllClients().subscribe(data => {
+      this.clients = data;
+    });
 
-
-    const monObservable = new Observable(subcriber => {
-        subcriber.next('Bonjour Dame');
-        subcriber.next('Bonjour Virginie');
-        subcriber.next('Bonjour Sukjin');
-        subcriber.complete();
-        subcriber.next('Bonjour Lucia');
-      //   subcriber.error();
-      // subcriber.complete();
+    const monObservable = new Observable(subscriber => {
+      subscriber.next('Bonjour madame !');
+      setTimeout(()=> {
+        subscriber.next('Bonjour Virginie !');
+      }, 3000);
+      subscriber.next('Bonjour Sukjin !');
+      subscriber.complete();
+      // subscriber.error('Aîe ! Une error !');
+      subscriber.next('Bonjour Lucia !');
+      // subscriber.complete();
     })
 
     monObservable.subscribe({
-      next: value => {
-        console.log(value);
+        next: value => {
+          console.log(value);
+        }
       }
-    })
+    )
 
   }
-
 
 }

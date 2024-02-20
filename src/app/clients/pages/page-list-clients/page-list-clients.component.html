@@ -1,2 +1,42 @@
-<p>page-list-clients works!</p>
-<li *ngFor="let prenom of tabPrenoms"> {{prenom}}</li>
+<h1>Liste des Clients</h1>
+<div class="table-responsive">
+<table class="table table-info table-striped ">
+  <thead>
+  <tr>
+    <th *ngFor="let header of headers">{{ header }}</th>
+    <th scope="col">actions</th>
+  </tr>
+  </thead>
+  <tbody>
+
+  <tr *ngFor="let client of clients">
+    <td>{{ client.id }}</td>
+    <td>{{ client.companyName }}</td>
+    <td>{{ client.firstName }}</td>
+    <td>{{ client.lastName }}</td>
+    <td>{{ client.email }}</td>
+    <td>{{ client.phone }}</td>
+    <td>{{ client.address }}</td>
+    <td>{{ client.zipCode }}</td>
+    <td>{{ client.city }}</td>
+    <td>{{ client.country }}</td>
+    <td>{{ client.state }}</td>
+    <td>
+      <button type="button" class="btn btn-primary">ADD</button>
+      <button type="button" class="btn btn-primary">MOD</button>
+      <button type="button" class="btn btn-primary">SUP</button>
+    </td>
+  </tr>
+  </tbody>
+</table>
+</div>
+
+
+<!--<ul>-->
+<!--  <li *ngFor="let client of clients">-->
+<!--    {{ client.companyName }} - {{ client.firstName }} - {{ client.lastName }} - {{ client.email }} - {{ client.phone }} - {{ client.address }} - {{ client.zipCode }} - {{ client.city }} - {{ client.country }} - {{ client.state }}-->
+<!--    -->
+<!--    -->
+<!--    -->
+<!--  </li>-->
+<!--</ul>-->

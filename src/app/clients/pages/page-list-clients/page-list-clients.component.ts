@@ -9,7 +9,19 @@ import {Observable, of} from "rxjs";
 })
 export class PageListClientsComponent implements OnInit {
   clients: any[] = [];
-
+  headers: string[] = [
+    'id',
+    'companyName',
+    'firstName',
+    'lastName',
+    'email',
+    'phone',
+    'address',
+    'zipCode',
+    'city',
+    'country',
+    'state',
+  ];
   constructor(private clientService: ClientsService) {
   }
 

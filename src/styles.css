@@ -1,8 +1,19 @@
 /* You can add global styles to this file, and also import other style files */
-a{
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a {
   text-decoration: none;
 }
 
-li{
+li {
   list-style-type: none;
 }
+
+.btn {
+  margin: 0 2px;
+}
+

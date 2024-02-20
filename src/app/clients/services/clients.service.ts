@@ -12,7 +12,7 @@ export class ClientsService {
   private apiURL = 'http://localhost:8080/api/clients';
   constructor(private http: HttpClient) { }
 
-  getAllClients(): Observable<any[]> {
+  getAllClients(): Observable<Client[]> {
     return this.http.get<any[]>(this.apiURL);
   }
 
